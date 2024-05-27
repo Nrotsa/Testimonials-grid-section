@@ -1,0 +1,136 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 500;
+}
+:root {
+  /* Colors */
+
+  /* Primary */
+
+  --Moderate-violet: hsl(263, 55%, 52%);
+  --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --Very-dark-blackish-blue: hsl(219, 29%, 14%);
+  --White: hsl(0, 0%, 100%);
+
+  /* Neutral */
+
+  --Light-gray: hsl(0, 0%, 81%);
+  --Light-grayish-blue: hsl(210, 46%, 95%);
+}
+body {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+
+  max-width: 70rem;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: flex-end;
+  font-size: 0.9rem;
+  overflow-x: hidden;
+  color: var(--Light-grayish-blue);
+  background-color: gray;
+}
+main {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.grid-col-2 {
+  grid-column: span 2;
+}
+.article-1 {
+  position: relative;
+  background-color: var(--Moderate-violet);
+}
+
+.article-2 {
+  background-color: var(--Very-dark-grayish-blue);
+}
+
+.article-3 {
+  background-color: var(--Light-grayish-blue);
+}
+
+.article-4 {
+  background-color: var(--Very-dark-blackish-blue);
+}
+.article-5 {
+  grid-column: 4;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  background-color: var(--Light-grayish-blue);
+}
+.article-3,
+.article-5 {
+  color: var(--Very-dark-blackish-blue);
+}
+.article-3 .verified,
+.article-5 .verified {
+  color: hsl(219, 29%, 14%, 0.5);
+}
+.article-3 .text-bot,
+.article-5 .text-bot {
+  color: hsl(219, 29%, 14%, 0.7);
+}
+.article {
+  display: flex;
+  flex-direction: column;
+
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+img {
+  width: 40px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+.name {
+  font-size: 0.9rem;
+}
+.verified {
+  color: hsl(210, 46%, 95%, 0.5);
+}
+.text-top {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+.text-bot {
+  color: hsl(210, 46%, 95%, 0.7);
+}
+.article-3 .verified,
+.article-5 .verified {
+  color: hsl(219, 29%, 14%, 0.5);
+}
+.pattern {
+  width: 104px;
+  border: none;
+  position: absolute;
+  z-index: -1;
+  top: 1rem;
+  right: 3rem;
+}
+
+@media (max-width: 880px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+}
